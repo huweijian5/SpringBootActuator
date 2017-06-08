@@ -1,0 +1,32 @@
+server:
+  port: 8131
+
+
+management:
+  port: 9131 #指定监控端口
+  security:
+    #Full authentication is required to access actuator endpoints. Consider adding Spring Security or set 'management.security.enabled' to false
+    #为了安全必须打开此设置，为true时需要使用账号和密码登录
+    enabled: false
+security:
+  user:
+    name: gosuncn #默认为user，客户端连接此服务的账号
+    password: gosuncn #客户端连接此服务的密码
+
+
+spring:
+  application:
+    name: Spring Boot Actuator Web
+  boot:
+    admin:
+      url: http://localhost:8131 #服务端地址，作为客户端注册到自己本身
+      username: gosuncn #服务端用户名
+      password: gosuncn  #服务端密码
+info:
+  app:
+    name: Actuator
+    description: Spring Boot Actuator Web
+    version: 1.0.0
+    spring-boot-version: 1.5.3
+
+
